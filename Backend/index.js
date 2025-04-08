@@ -14,7 +14,7 @@ const io = socketIo(server, {
 });
 
 // Serve static React build files
-app.use(express.static(path.join(__dirname, '../frontend/build')));
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 
 let users = [];
