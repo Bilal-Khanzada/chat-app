@@ -11,7 +11,7 @@ function App() {
 
   // Establish socket connection when the component mounts
   useEffect(() => {
-    const newSocket = io('http://your-ec2-ip:3000');
+    const newSocket = io('http://13.51.205.151:3000/');
     setSocket(newSocket);
 
     // Cleanup socket connection on unmount
