@@ -1,0 +1,26 @@
+name: 🚀 Deploy Node.js App to EC2
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v2
+
+    - name: 🔧 SSH & Deploy
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd ~/chat-app
+          git pull origin main
+          npm install
+          pm2 restart all || pm2 start index.js --name chat-app
