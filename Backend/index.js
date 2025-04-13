@@ -8,14 +8,10 @@ const server = http.createServer(app);
 
 const io = socketIo(server, {
   cors: {
-    origin: "*", // Change this to your domain/IP in production
+    origin: "*",
     methods: ["GET", "POST"]
   }
 });
-
-// Serve static React build files
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
-
 
 let users = [];
 
@@ -48,7 +44,14 @@ io.on('connection', (socket) => {
   });
 });
 
-// Start the server
-server.listen(3000, () => {
-  console.log('Server running on http://localhost:3000');
+// ✅ Put this BEFORE static file serving
+app.get('/hello', (req, res) => {
+  res.send('Hello from the backend!');
+});
+
+// React static files AFTER routes
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+server.listen(3000, '0.0.0.0', () => {
+  console.log('Server running on http://13.51.205.151:3000');
 });
