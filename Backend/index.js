@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 const io = socketIo(server, {
   cors: {
-    origin: "*", // Change this to your domain/IP in production
+    origin: "*", 
     methods: ["GET", "POST"]
   }
 });
