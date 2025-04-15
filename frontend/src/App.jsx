@@ -101,7 +101,7 @@ function App() {
         // Chat Screen
         <div className="screen chat-screen active">
           <div className="header">
-            <div className="logo">Chatroomm</div>
+            <div className="logo">Chatroom</div>
             <button id="exit-chat" onClick={exitChat}>
               Exit
             </button>
