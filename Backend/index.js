@@ -8,11 +8,7 @@ const server = http.createServer(app);
 
 const io = socketIo(server, {
   cors: {
-<<<<<<< HEAD
-    origin: "*", 
-=======
     origin: "*",
->>>>>>> refs/remotes/origin/main
     methods: ["GET", "POST"]
   }
 });
