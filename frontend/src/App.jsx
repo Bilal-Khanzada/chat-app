@@ -9,7 +9,7 @@ function App() {
   const [uname, setUname] = useState('');
   const [socket, setSocket] = useState(null);
 
-  // Establish socket connection when the component mounts
+  // Establish socket connection when the component mountss
   useEffect(() => {
     const newSocket = io('http://13.51.205.151:3000/'); 
     setSocket(newSocket);
