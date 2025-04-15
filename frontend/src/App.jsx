@@ -80,7 +80,7 @@ function App() {
       {!isChatActive ? (
         <div className="join-screen screen active">
           <div className="form">
-            <h2>Joinn Chatroom</h2>
+            <h2>Join Chatroom</h2>
             <div className="form-input">
               <label>Username</label>
               <input
@@ -92,7 +92,7 @@ function App() {
             </div>
             <div className="form-input">
               <button id="join-user" onClick={joinChat}>
-                Joinn
+                Join
               </button>
             </div>
           </div>
