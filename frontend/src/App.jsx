@@ -54,7 +54,6 @@ function App() {
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
   };
-
   // Send message handler
   const sendMessage = () => {
     if (message.trim().length === 0) return;
